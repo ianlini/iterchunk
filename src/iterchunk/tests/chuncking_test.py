@@ -1,7 +1,7 @@
 import unittest
 from itertools import islice
 
-from dchunk import chunk, chunk_with_index
+from iterchunk import chunk, chunk_with_index
 
 
 class TestChunking(unittest.TestCase):
