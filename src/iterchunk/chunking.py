@@ -1,13 +1,16 @@
 from __future__ import print_function, division, absolute_import, unicode_literals
 import itertools
-import collections
+try:
+    from collections.abc import Iterator
+except ImportError:
+    from collections import Iterator
 
 
 def get_n_chunks(iterable_size, chunk_size):
     return (iterable_size - 1) // chunk_size + 1
 
 
-class ChunkIterator(collections.Iterator):
+class ChunkIterator(Iterator):
     def __init__(self, iterable, chunk_size):
         self.iterator = iter(iterable)
         self.chunk_size = chunk_size
